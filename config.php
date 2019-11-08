@@ -18,28 +18,9 @@ return [
     //回调地址
     'notify_url' => '',
 
-    //微信红包
+    //微信app_id
     'wx_app_id' => '',
 
-    //请求服务器
-    'host' => 'https://api-jiesuan.yunzhanghu.com',
-
-    //云账户接口地址
-    'url' => [
-
-        //转账到银行卡
-        'card' => '',
-
-        //转账到支付宝
-        'alipay' => '',
-
-        //转账到微信
-        'wxpay' => '/api/payment/v1/order-wxpay',
-
-        //查询订单
-        'query' => '/api/payment/v1/query-realtime-order',
-
-        //查询云账户余额
-        'accounts' => '/api/payment/v1/query-accounts',
-    ],
+    //回调来源ip
+    'source_ip' => ['120.55.214.118', '116.62.0.220', '118.31.31.71', '120.55.214.49', '49.4.23.21', '117.78.48.61']
 ];
