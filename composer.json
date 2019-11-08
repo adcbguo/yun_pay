@@ -1,6 +1,6 @@
 {
   "name": "adcbguo/yun_pay",
-  "description": "https://service.yunzhanghu.com/app/login",
+  "description": "云账户组件",
   "type": "library",
   "version": "1.0.0",
   "license": "Apache-2.0",
