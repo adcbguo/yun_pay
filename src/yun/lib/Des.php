@@ -25,10 +25,10 @@ class Des {
      * @param string $key
      * @param string $value
      * @param string $method
-     * @return array
+     * @return string
      */
     public static function decrypt(string $key, string $value, $method = 'DES-EDE3-CBC') {
         $iv = substr($key, 0, 8);
-        return json_decode(openssl_decrypt($value, $method, $key, 0, $iv));
+        return openssl_decrypt($value, $method, $key, OPENSSL_RAW_DATA | OPENSSL_ZERO_PADDING, $iv);
     }
 }

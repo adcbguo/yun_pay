@@ -16,10 +16,9 @@ class Pay {
 
     /**
      * 请求
-     * @param string $url
+     * @param $url
      * @param array $data
-     * @param string $method
-     * @return false|array
+     * @return \stdClass|false
      * @throws \ErrorException
      */
     protected function request(string $url, array $data, string $method = 'POST') {
@@ -58,7 +57,7 @@ class Pay {
      * @param string $app_key
      * @return string
      */
-    private function buildSign(string $data, $mess, int $timestamp, string $app_key) {
+    public function buildSign(string $data, $mess, int $timestamp, string $app_key) {
         return hash_hmac('sha256', "data={$data}&mess={$mess}&timestamp={$timestamp}&key={$app_key}", $app_key);
     }
 
