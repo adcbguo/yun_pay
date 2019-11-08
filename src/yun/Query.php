@@ -14,7 +14,7 @@ class Query extends Pay {
      * 查询订单
      * @param string $order_id
      * @param string $channel
-     * @return mixed
+     * @return array
      * @throws \ErrorException
      */
     public function one(string $order_id, string $channel = '银⾏卡') {
@@ -29,7 +29,7 @@ class Query extends Pay {
 
     /**
      * 查询账户余额
-     * @return mixed
+     * @return array
      * @throws \ErrorException
      */
     public function accounts() {

@@ -16,7 +16,8 @@ class Des {
      * @return string
      */
     public static function encrypt(string $key, array $data, $method = 'DES-EDE3-CBC') {
-        return openssl_encrypt(json_encode($data), $method, $key);
+        $iv = substr($key, 0, 8);
+        return openssl_encrypt(json_encode($data), $method, $key, 0, $iv);
     }
 
     /**
@@ -27,6 +28,7 @@ class Des {
      * @return array
      */
     public static function decrypt(string $key, string $value, $method = 'DES-EDE3-CBC') {
-        return json_decode(openssl_decrypt($value, $method, $key));
+        $iv = substr($key, 0, 8);
+        return json_decode(openssl_decrypt($value, $method, $key, 0, $iv));
     }
 }

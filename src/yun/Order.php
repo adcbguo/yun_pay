@@ -19,7 +19,7 @@ class Order extends Pay {
      * @param string $pay 打款⾦额(单位为元, 必填)
      * @param string $phone_no ⽤户或联系⼈⼿机号(选填)
      * @param string $pay_remark 打款备注(选填，最⼤20个字符，⼀个汉字占2个字符，不允许特殊字符：' " & | @ % * ( ) - : # ￥)
-     * @return mixed
+     * @return array
      * @throws \ErrorException
      */
     public function realtime(string $order_id, string $real_name, string $card_no, string $id_card, string $pay, string $phone_no = '', string $pay_remark = '') {
@@ -47,7 +47,7 @@ class Order extends Pay {
      * @param string $card_no 收款⼈⽀付宝账户(必填)
      * @param string $pay 打款⾦额（单位为元, 必填）
      * @param string $pay_remark 打款备注(选填，最⼤20个字符，⼀个汉字占2个字符，不允许特殊字符：' " & | @ % * ( ) - : # ￥)
-     * @return mixed
+     * @return array
      * @throws \ErrorException
      */
     public function alipay(string $order_id, string $real_name, string $id_card, string $card_no, string $pay, string $pay_remark = '') {
@@ -76,7 +76,7 @@ class Order extends Pay {
      * @param string $pay 打款⾦额（单位为元）(必填)
      * @param string $notes 描述信息(选填)
      * @param string $pay_remark 打款备注(选填，最⼤20个字符，⼀个汉字占2个字符，不允许特殊字符：' " & | @ % * ( ) - : # ￥)
-     * @return mixed
+     * @return array
      * @throws \ErrorException
      */
     public function wxpay(string $order_id, string $real_name, string $id_card, string $openid, string $pay, string $notes = '', string $pay_remark = '') {

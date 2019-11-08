@@ -43,7 +43,12 @@ class Pay {
             'dealer-id' => $this->config['dealer_id'],
             'request-id' => $mess,
         ]);
-        return $curl->post($url, $request);
+        $response = $curl->post($url, $request);
+        if ($curl->httpStatusCode == 200) {
+            return json_decode($response, true);
+        } else {
+            return false;
+        }
     }
 
     /**
@@ -65,7 +70,7 @@ class Pay {
     /**
      * 实例化对象
      * @param array $config
-     * @return Pay
+     * @return Query|Order
      */
     public static function make(array $config) {
         if (empty(self::$in)) {
