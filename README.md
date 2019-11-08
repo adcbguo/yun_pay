@@ -7,7 +7,7 @@ composer require adcbguo/yun_pay
 
 ## 配置文件
 ```   
-把配置文件 yun_pay\config.php 复制到项目的对应文件
+把配置文件 yun_pay\config.php 复制到项目的对应配置目录下
 ```
 
 ## 使用方式(参数类型看注释)
