@@ -22,9 +22,10 @@ class Pay {
 
     /**
      * 请求
-     * @param $url
+     * @param string $url
      * @param array $data
-     * @return \stdClass|false
+     * @param string $method
+     * @return false|array
      * @throws \ErrorException
      */
     protected function request(string $url, array $data, string $method = 'POST') {
