@@ -9,12 +9,6 @@ use yun\Query;
 class Pay {
 
     /**
-     * 对象
-     * @var Query|Order
-     */
-    private static $in;
-
-    /**
      * 配置参数
      * @var array
      */
@@ -75,12 +69,9 @@ class Pay {
     /**
      * 实例化对象
      * @param array $config
-     * @return Query|Order
+     * @return Query|Order|Pay
      */
     public static function make(array $config) {
-        if (empty(self::$in)) {
-            self::$in = new static($config);
-        }
-        return self::$in;
+        return new static($config);
     }
 }
