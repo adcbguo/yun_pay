@@ -12,6 +12,8 @@
   ],
   "require": {
     "php": ">=7.0",
+    "ext-openssl": "*",
+    "ext-json": "*",
     "php-curl-class/php-curl-class": "^8.6"
   },
   "autoload": {

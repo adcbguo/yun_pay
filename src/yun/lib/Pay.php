@@ -30,7 +30,7 @@ class Pay {
     protected function request(string $url, array $data) {
         $timestamp = time();
         $mess = uniqid();
-        $data = Des::encrypt($data);
+        $data = Des::encrypt($this->config['des3_key'], $data);
         $request = [
             'data' => $data,
             'mess' => $mess,
