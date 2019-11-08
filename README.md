@@ -2,7 +2,7 @@
 
 ## 安装方式
 ```
-composer require adcbguo/yun_pay
+composer require adcbguo/yun_pay dev-master
 ```
 
 ## 配置文件
