@@ -10,8 +10,10 @@ composer require adcbguo/yun_pay
 把配置文件 yun_pay\config.php 复制到项目的对应配置目录下
 ```
 
-## 使用方式(参数类型看注释)
+## 使用方式
 ```
+//参数类型看注释
+
 // 转账到银行卡
 Order::make($config)->realtime($order_id,$real_name,$card_no,$id_card,$pay,$phone_no,$pay_remark);
 
