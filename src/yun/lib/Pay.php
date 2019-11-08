@@ -24,10 +24,10 @@ class Pay {
      * 请求
      * @param $url
      * @param array $data
-     * @return mixed
+     * @return \stdClass|false
      * @throws \ErrorException
      */
-    protected function request(string $url, array $data) {
+    protected function request(string $url, array $data, string $method = 'POST') {
         $timestamp = time();
         $mess = uniqid();
         $data = Des::encrypt($this->config['des3_key'], $data);
@@ -43,9 +43,13 @@ class Pay {
             'dealer-id' => $this->config['dealer_id'],
             'request-id' => $mess,
         ]);
-        $response = $curl->post($url, $request);
+        if (strtoupper($method) == 'POST') {
+            $curl->post($url, $request);
+        } else {
+            $curl->get($url, $request);
+        }
         if ($curl->httpStatusCode == 200) {
-            return json_decode($response, true);
+            return json_decode($curl->getRawResponse(), true);
         } else {
             return false;
         }
